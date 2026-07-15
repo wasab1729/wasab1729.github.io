@@ -252,6 +252,7 @@
   content: "Problem " counter(problem-number);
 }
 details {
+  display: block;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -262,7 +263,7 @@ details {
   background: #fff;
 }
 
-summary {
+details summary {
   cursor: pointer;
   font-weight: 600;
   white-space: normal;
@@ -275,9 +276,6 @@ details[open] summary {
 
 details p {
   margin: 0;
-  padding-left: 20px;
-
-  /* 画面幅に合わせて改行する */
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: normal;
