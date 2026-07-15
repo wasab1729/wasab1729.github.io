@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="wasab1が作った代数の問題"
+  >
+
+  <title>Number Theory Problems | wasab1</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- 数式表示用 -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+</head>
+
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">
+        wasab1
+      </a>
+
+      <nav>
+        <a href="A.html">A</a>
+        <a href="C.html">C</a>
+        <a href="G.html">G</a>
+        <a href="N.html" class="current-category">N</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container problems-page">
+    <div class="page-header">
+      <p>
+        <a href="problems.html">← Problems</a>
+      </p>
+
+      <h1>Geometry</h1>
+    </div>
+
+    <!-- ここから1問目 -->
+    <div class="problem">
+      <h2 class="problem-title">
+        (<a href="https://onlinemathcontest.com/contests/omce024/tasks/17238">
+          OMCE024(A)
+        </a>)
+      </h2>
+
+      <p>
+        実数に対して定義され正の実数値をとる関数 $f$ は，
+        任意の実数 $x,y$ に対して，
+      </p>
+
+      $$
+      f\left(xf(y)-yf(x)\right)
+      =
+      \dfrac{f(x)}{f(y)}
+      $$
+
+      <p>
+        を満たします．さらに，$f$ が単射であり，
+        $f(3)=5$ が成り立つとき，$f$ は一意に定まるので，
+        $100f(10)$ 以下の最大の整数を解答してください．
+      </p>
+
+      <details>
+        <summary>単射とは</summary>
+
+        <p>
+          実数に対して定義され正の実数値をとる関数 $f$
+          が単射であるとは，任意の実数 $x_1,x_2$ に対して，
+          $x_1\neq x_2$ ならば
+          $f(x_1)\neq f(x_2)$ が成り立つことをいいます．
+        </p>
+      </details>
+    </div>
+    <!-- ここまで1問目 -->
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 wasab1
+    </div>
+  </footer>
+</body>
+</html>
