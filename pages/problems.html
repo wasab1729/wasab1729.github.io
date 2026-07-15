@@ -69,10 +69,12 @@
         <p>
           を満たします．さらに，$f$ が単射であり，$f(3)=5$ が成り立つとき，$f$ は一意に定まるので，$100f(10)$ 以下の最大の整数を解答してください．
         </p>
-        <details><summary>単射とは</summary>
+        <details class="smooth-details"><summary>単射とは</summary>
+        <div class="details-content">
           <p>
           　実数に対して定義され正の実数値をとる関数 $f$ が単射であるとは，任意の実数 $x_1,x_2$ に対して，$x_1\neq x_2$ ならば $f(x_1)\neq f(x_2)$ が成り立つことをいいます．
           </p>
+        </div>
         </details>
       </div>
       <!-- ここまで-->
@@ -84,5 +86,92 @@
       © 2026 wasab1
     </div>
   </footer>
+<script>
+  document.querySelectorAll(".smooth-details").forEach((details) => {
+    const summary = details.querySelector("summary");
+
+    let animation = null;
+    let isClosing = false;
+    let isOpening = false;
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (isClosing || !details.open) {
+        openDetails();
+      } else if (isOpening || details.open) {
+        closeDetails();
+      }
+    });
+
+    function openDetails() {
+      const startHeight = `${details.offsetHeight}px`;
+
+      details.open = true;
+      details.style.overflow = "hidden";
+
+      requestAnimationFrame(() => {
+        const endHeight = `${details.scrollHeight}px`;
+
+        animation?.cancel();
+
+        isOpening = true;
+        isClosing = false;
+
+        animation = details.animate(
+          {
+            height: [startHeight, endHeight]
+          },
+          {
+            duration: 250,
+            easing: "ease-out"
+          }
+        );
+
+        animation.onfinish = () => finishAnimation(true);
+        animation.oncancel = () => {
+          isOpening = false;
+        };
+      });
+    }
+
+    function closeDetails() {
+      const startHeight = `${details.offsetHeight}px`;
+      const endHeight = `${summary.offsetHeight}px`;
+
+      details.style.overflow = "hidden";
+
+      animation?.cancel();
+
+      isClosing = true;
+      isOpening = false;
+
+      animation = details.animate(
+        {
+          height: [startHeight, endHeight]
+        },
+        {
+          duration: 250,
+          easing: "ease-out"
+        }
+      );
+
+      animation.onfinish = () => finishAnimation(false);
+      animation.oncancel = () => {
+        isClosing = false;
+      };
+    }
+
+    function finishAnimation(open) {
+      details.open = open;
+      details.style.height = "";
+      details.style.overflow = "";
+
+      isOpening = false;
+      isClosing = false;
+      animation = null;
+    }
+  });
+</script>
 </body>
 </html>
