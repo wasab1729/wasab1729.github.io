@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="数学とか"
+  >
+
+  <title>wasab1's website</title>
+
+  <!-- MathJaxの設定 -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: {
+          '[+]': [['$', '$']]
+        }
+      }
+    };
+  </script>
+
+  <!-- LaTeX形式の数式を表示するためのMathJax -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"
+  ></script>
+
+  <style>
+    :root {
+      --background: #f7f8fc;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --subtext: #5f6b7a;
+      --border: #dfe4ec;
+      --primary: #3157b7;
+      --primary-light: #e9efff;
+      --code-background: #18202f;
+      --code-text: #e8edf7;
+      --max-width: 1000px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans JP",
+        sans-serif;
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .logo:hover {
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--subtext);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 100px 0 80px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.4rem);
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--subtext);
+      font-size: 1.08rem;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-description {
+      margin: 0 0 28px;
+      color: var(--subtext);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 26px rgba(33, 48, 79, 0.05);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--subtext);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .article-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .article-list li + li {
+      border-top: 1px solid var(--border);
+    }
+
+    .article-list a {
+      display: block;
+      padding: 22px 26px;
+    }
+
+    .article-list a:hover {
+      background: #fafbfe;
+      text-decoration: none;
+    }
+
+    .article-title {
+      display: block;
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .article-meta {
+      display: block;
+      margin-top: 4px;
+      color: var(--subtext);
+      font-size: 0.88rem;
+    }
+
+    .math-example {
+      overflow-x: auto;
+      margin-top: 22px;
+      padding: 20px;
+      background: var(--surface);
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 22px 0 0;
+      padding: 20px;
+      background: var(--code-background);
+      color: var(--code-text);
+      border-radius: 10px;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 34px 0;
+      color: var(--subtext);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 70px 0 45px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="./">wasab1</a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#mathematics">Mathematics</a>
+        <a href="#competitive-programming">Competitive Programming</a>
+        <a href="#articles">Articles</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">
+          MATHEMATICS / COMPETITIVE PROGRAMMING
+        </p>
+
+        <h1>
+          数学と競技プログラミングの記録
+        </h1>
+
+        <p class="hero-description">
+          数学の問題、証明、競技プログラミングの解説や
+          学習記録を掲載する個人サイトです。
+        </p>
+
+        <div class="hero-links">
+          <a class="button" href="#articles">
+            記事を読む
+          </a>
+
+          <a
+            class="button secondary"
+            href="https://github.com/wasab1729"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+
+        <p class="section-description">
+          このサイトと管理者について。
+        </p>
+
+        <div class="card">
+          <h3>自己紹介</h3>
+
+          <p>
+            数学をしています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mathematics">
+      <div class="container">
+        <h2 class="section-title">Mathematics</h2>
+
+        <p class="section-description">
+          数学の問題、解説、証明をまとめます。
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <span class="tag">Number Theory</span>
+            <h3>整数論</h3>
+            <p>
+              素数、合同式、ディオファントス方程式など。
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Geometry</span>
+            <h3>幾何</h3>
+            <p>
+              三角形、円、射影幾何などの問題と証明。
+            </p>
+          </article>
+        </div>
+
+        <div class="math-example">
+          例えば、HTML内に次のように書くと数式が表示されます。
+
+          $$
+          \sum_{k=1}^{n} k
+          =
+          \frac{n(n+1)}{2}.
+          $$
+        </div>
+      </div>
+    </section>
+
+    <section id="competitive-programming">
+      <div class="container">
+        <h2 class="section-title">
+          Competitive Programming
+        </h2>
+
+        <p class="section-description">
+          アルゴリズム、実装、コンテスト参加記録をまとめます。
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <span class="tag">Algorithm</span>
+            <h3>アルゴリズム解説</h3>
+            <p>
+              動的計画法、グラフ、二分探索、データ構造など。
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Contest</span>
+            <h3>コンテスト記録</h3>
+            <p>
+              AtCoderなどの参加記録や問題の復習。
+            </p>
+          </article>
+        </div>
+
+        <pre><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cout &lt;&lt; "Hello, competitive programming!" &lt;&lt; '\n';
+}</code></pre>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="container">
+        <h2 class="section-title">Articles</h2>
+
+        <p class="section-description">
+          新しい記事をここに追加していきます。
+        </p>
+
+        <ul class="article-list">
+          <li>
+            <a href="#">
+              <span class="article-title">
+                最初の記事
+              </span>
+
+              <span class="article-meta">
+                Mathematics · 2026-07-15
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="article-title">
+                競技プログラミングの学習記録
+              </span>
+
+              <span class="article-meta">
+                Competitive Programming · 2026-07-15
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 wasab1
+    </div>
+  </footer>
+</body>
+</html>
