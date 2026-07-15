@@ -12,21 +12,6 @@
   <title>Problems | wasab1</title>
 
   <link rel="stylesheet" href="../style.css">
-
-  <!-- 数式表示用 -->
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-        displayMath: [['$$', '$$']]
-      }
-    };
-  </script>
-
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  ></script>
 </head>
 
 <body>
@@ -38,12 +23,12 @@
 
       <nav>
         <a href="../index.html#about">About</a>
-        <a href="../index.html#pages">Pages</a>
+        <a href="problems.html">Problems</a>
       </nav>
     </div>
   </header>
 
-  <main class="container problems-page">
+  <main class="container">
     <div class="page-header">
       <p>
         <a href="../index.html">← Home</a>
@@ -52,33 +37,31 @@
       <h1>Problems</h1>
 
       <p class="page-introduction">
-        気に入った自作問題をまとめようと思います．難易度は概ね難易度順に並んでいます．
+        気に入った自作問題をまとめようと思います．
       </p>
     </div>
 
-    <section>
-      <h2>Algebra</h2>
-      <!-- ここから-->
-      <div class="problem">
-        <h3 class="problem-title">(<a href="https://onlinemathcontest.com/contests/omce024/tasks/17238">OMCE024(A)</a>)</h3>
+    <nav class="category-navigation">
+      <a href="A.html">
+        <span class="category-letter">A</span>
+        <span class="category-name">Algebra</span>
+      </a>
 
-        <p>
-          　実数に対して定義され正の実数値をとる関数 $f$ は，任意の実数 $x,y$ に対して，
-        </p>
-        $$f\left(xf(y)-yf(x)\right)=\dfrac{f(x)}{f(y)}$$
-        <p>
-          を満たします．さらに，$f$ が単射であり，$f(3)=5$ が成り立つとき，$f$ は一意に定まるので，$100f(10)$ 以下の最大の整数を解答してください．
-        </p>
-        <details class="smooth-details"><summary>単射とは</summary>
-        <div class="details-content">
-          <p>
-          　実数に対して定義され正の実数値をとる関数 $f$ が単射であるとは，任意の実数 $x_1,x_2$ に対して，$x_1\neq x_2$ ならば $f(x_1)\neq f(x_2)$ が成り立つことをいいます．
-          </p>
-        </div>
-        </details>
-      </div>
-      <!-- ここまで-->
-    </section>
+      <a href="C.html">
+        <span class="category-letter">C</span>
+        <span class="category-name">Combinatorics</span>
+      </a>
+
+      <a href="G.html">
+        <span class="category-letter">G</span>
+        <span class="category-name">Geometry</span>
+      </a>
+
+      <a href="N.html">
+        <span class="category-letter">N</span>
+        <span class="category-name">Number Theory</span>
+      </a>
+    </nav>
   </main>
 
   <footer>
@@ -86,92 +69,5 @@
       © 2026 wasab1
     </div>
   </footer>
-<script>
-  document.querySelectorAll(".smooth-details").forEach((details) => {
-    const summary = details.querySelector("summary");
-
-    let animation = null;
-    let isClosing = false;
-    let isOpening = false;
-
-    summary.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      if (isClosing || !details.open) {
-        openDetails();
-      } else if (isOpening || details.open) {
-        closeDetails();
-      }
-    });
-
-    function openDetails() {
-      const startHeight = `${details.offsetHeight}px`;
-
-      details.open = true;
-      details.style.overflow = "hidden";
-
-      requestAnimationFrame(() => {
-        const endHeight = `${details.scrollHeight}px`;
-
-        animation?.cancel();
-
-        isOpening = true;
-        isClosing = false;
-
-        animation = details.animate(
-          {
-            height: [startHeight, endHeight]
-          },
-          {
-            duration: 250,
-            easing: "ease-out"
-          }
-        );
-
-        animation.onfinish = () => finishAnimation(true);
-        animation.oncancel = () => {
-          isOpening = false;
-        };
-      });
-    }
-
-    function closeDetails() {
-      const startHeight = `${details.offsetHeight}px`;
-      const endHeight = `${summary.offsetHeight}px`;
-
-      details.style.overflow = "hidden";
-
-      animation?.cancel();
-
-      isClosing = true;
-      isOpening = false;
-
-      animation = details.animate(
-        {
-          height: [startHeight, endHeight]
-        },
-        {
-          duration: 250,
-          easing: "ease-out"
-        }
-      );
-
-      animation.onfinish = () => finishAnimation(false);
-      animation.oncancel = () => {
-        isClosing = false;
-      };
-    }
-
-    function finishAnimation(open) {
-      details.open = open;
-      details.style.height = "";
-      details.style.overflow = "";
-
-      isOpening = false;
-      isClosing = false;
-      animation = null;
-    }
-  });
-</script>
 </body>
 </html>
