@@ -280,3 +280,12 @@ details p {
   overflow-wrap: anywhere;
   word-break: normal;
 }
+.smooth-details .details-content {
+  padding-top: 8px;
+}
+
+.smooth-details .details-content p {
+  margin: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
