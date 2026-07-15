@@ -236,6 +236,7 @@ li {
 }
 /* 難易度 */
 
+
 .difficulty {
   display: inline-flex;
   gap: 1px;
@@ -248,7 +249,7 @@ li {
 }
 
 .difficulty-star {
-  color: #d0d0d0;
+  color: #999;
 }
 
 .difficulty-star.is-filled {
