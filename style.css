@@ -205,70 +205,38 @@
         margin-top: 52px;
       }
     }
-.article {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.back-link {
-  margin-bottom: 36px;
-  font-size: 0.9rem;
-}
-
-.article-header {
-  margin-bottom: 48px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #ddd;
-}
-
-.article-header h1 {
-  margin-bottom: 12px;
-  font-size: clamp(2rem, 6vw, 2.8rem);
-}
-
-.article-information {
+.page-list {
   margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-list li {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.page-list li:first-child {
+  border-top: 1px solid #e5e5e5;
+}
+
+.page-list a {
+  display: block;
+  padding: 20px 0;
+}
+
+.page-list a:hover {
+  text-decoration: none;
+}
+
+.page-title {
+  display: block;
+  color: #222;
+  font-weight: 600;
+}
+
+.page-description {
+  display: block;
+  margin-top: 4px;
   color: #777;
   font-size: 0.9rem;
-}
-
-.article-body {
-  color: #333;
-}
-
-.article-body h2 {
-  margin-top: 56px;
-  margin-bottom: 20px;
-}
-
-.article-body h3 {
-  margin-top: 40px;
-  margin-bottom: 16px;
-}
-
-.article-body p {
-  margin: 18px 0;
-}
-
-.article-body img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 32px auto;
-}
-
-.article-body blockquote {
-  margin: 28px 0;
-  padding: 4px 0 4px 20px;
-  color: #555;
-  border-left: 3px solid #bbb;
-}
-
-.article-body ul,
-.article-body ol {
-  padding-left: 28px;
-}
-
-.article-body li {
-  margin: 8px 0;
 }
