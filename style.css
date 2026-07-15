@@ -234,7 +234,26 @@ li {
 .problem-number {
   color: #222;
 }
+/* 難易度 */
 
+.difficulty {
+  display: inline-flex;
+  gap: 1px;
+  margin-left: 0.7em;
+  vertical-align: 0.05em;
+  white-space: nowrap;
+  user-select: none;
+  font-size: 0.85em;
+  letter-spacing: 0;
+}
+
+.difficulty-star {
+  color: #d0d0d0;
+}
+
+.difficulty-star.is-filled {
+  color: #222;
+}
 /* 数式 */
 
 .math-example {
