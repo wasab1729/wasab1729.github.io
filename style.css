@@ -723,3 +723,61 @@ footer {
     padding-left: 10px;
   }
 }
+/* 色付きの上部エリア */
+
+.top-area {
+  color: #202628;
+  background: #eaf1f0;
+  border-bottom: 1px solid #d2ddda;
+}
+
+.top-area .site-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(32, 38, 40, 0.12);
+}
+
+.top-area .site-title {
+  color: #202628;
+}
+
+.top-area .header-inner nav a {
+  color: #4d5c5a;
+}
+
+.top-area .header-inner nav a:hover {
+  color: #111;
+}
+
+.top-area .home-hero {
+  margin-top: 0;
+  padding-top: 72px;
+  padding-bottom: 76px;
+}
+
+.top-area .home-hero-label {
+  color: #60716e;
+}
+
+.top-area .home-hero-description {
+  color: #4d5c5a;
+}
+
+/* 色付きエリア内の外部リンク */
+
+.top-area .social-link {
+  color: #26312f;
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(38, 49, 47, 0.18);
+}
+
+.top-area .social-link:hover {
+  color: #111;
+  background: #fff;
+  border-color: rgba(38, 49, 47, 0.35);
+}
+@media (max-width: 600px) {
+  .top-area .home-hero {
+    padding-top: 44px;
+    padding-bottom: 52px;
+  }
+}
