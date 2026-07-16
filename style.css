@@ -255,6 +255,45 @@ li {
 .difficulty-star.is-filled {
   color: #222;
 }
+
+/* 求値問題・記述問題の切り替え */
+
+.problem-mode-switch {
+  display: inline-flex;
+  margin-top: 24px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.problem-mode-switch a {
+  padding: 9px 18px;
+  color: #555;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.problem-mode-switch a + a {
+  border-left: 1px solid #d0d0d0;
+}
+
+.problem-mode-switch a:hover {
+  color: #222;
+  background: #f5f5f5;
+  text-decoration: none;
+}
+
+.problem-mode-switch .current-mode {
+  color: #fff;
+  background: #222;
+  font-weight: 600;
+}
+
+.problem-mode-switch .current-mode:hover {
+  color: #fff;
+  background: #222;
+}
+
 /* 数式 */
 
 .math-example {
@@ -428,5 +467,17 @@ footer {
 
   details {
     padding: 10px 12px;
+  }
+
+  .problem-mode-switch {
+    display: flex;
+    width: 100%;
+  }
+
+  .problem-mode-switch a {
+    flex: 1;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
   }
 }
