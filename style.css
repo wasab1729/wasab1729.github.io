@@ -597,3 +597,129 @@ footer {
     padding-left: 10px;
   }
 }
+/* トップページの大きなヘッダー */
+
+.home-hero {
+  margin-top: 0;
+  padding: 24px 0 72px;
+}
+
+.home-hero-label {
+  margin: 0 0 12px;
+  color: #777;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  margin-bottom: 16px;
+}
+
+.home-hero-description {
+  max-width: 620px;
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* 外部サイトへのボタン */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 14px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.social-link:hover {
+  color: #222;
+  background: #f6f6f6;
+  border-color: #aaa;
+  text-decoration: none;
+}
+
+/* YouTubeアイコン */
+
+.social-link svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* Xの文字アイコン */
+
+.social-text-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+/* OnlineMathContestのアイコン */
+
+.omc-icon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.omc-icon {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  object-fit: cover;
+}
+
+.youtube-link:hover {
+  color: #c00;
+}
+
+/* トップページのスマートフォン表示 */
+
+@media (max-width: 600px) {
+  .home-hero {
+    padding: 10px 0 52px;
+  }
+
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .social-link {
+    min-width: 0;
+    justify-content: center;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
