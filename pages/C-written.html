@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="wasab1が作った組合せの問題"
+  >
+
+  <title>Combinatorics Written Problems | wasab1</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- 数式表示用 -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+</head>
+
+<body>
+<header>
+  <div class="container header-inner">
+    <a class="site-title" href="../index.html">
+      wasab1
+    </a>
+
+<nav>
+  <a href="A-written.html">A</a>
+  <a href="C-written.html" class="current-category">C</a>
+  <a href="G-written.html">G</a>
+  <a href="N-written.html">N</a>
+</nav>
+  </div>
+</header>
+
+<main class="container problems-page">
+  <div class="page-header">
+    <p>
+      <a href="problems.html">← Problems</a>
+    </p>
+
+    <h1>Combinatorics</h1>
+
+<div class="problem-mode-switch">
+  <a href="C-value.html">
+    求値問題
+  </a>
+
+  <a
+    href="C-written.html"
+    class="current-mode"
+    aria-current="page"
+  >
+    記述問題
+  </a>
+</div>
+  </div>
+
+    <!--ここから-->
+    <div class="problem" data-difficulty="1">
+      <h2 class="problem-title">
+        (<a href="https://pilame.jp/25yo_problem.pdf">
+          PILAME杯2025予選問7
+        </a>)
+      </h2>
+
+      <p>
+        ある文字列 $S$ を<b>圧縮する</b>とは，$S$ 内に同じ文字が $1$ 文字以上連続して現れる各箇所を，その文字 $1$ つと連続回数（を十進法で表記したもの）で置き換えることをいい，文字列 $S$ を圧縮してできる文字列を $f(S)$ で表す．例えば，$f(\mathrm{abbcaaa})=\mathrm{a1b2c1a3}$ である．<br>
+        いま，$\mathrm{a,b,c}$ からなる（使わないものがあってもいい）文字列 $S$ が以下の条件をみたしている．
+      </p>
+      <ul>
+        <li>$S$ と $f(S)$ の長さは等しく，かつ奇数である．</li>
+      </ul>
+      <p>
+        文字列 $S$ の長さとしてありうる最小の値を $N$ とするとき，長さ $N$ の文字列 $S$ としてありうるものはいくつあるか．
+      </p>
+
+    </div>
+    <!--ここまで-->
+    <!--ここから-->
+    <div class="problem" data-difficulty="2">
+      <h2 class="problem-title">
+      </h2>
+
+      <p>
+        $S=\{1,2,\cdots,360\}$ とします．$S$ の各元に対して定義され $S$ 上に値をとる関数 $f$ であって，任意の $S$ の元 $x$ に対して
+      </p>
+      $$f(x)f(f(x))=360$$
+      <p>
+        を満たすものは $N$ 個あります．$N$ が $2$ で割り切れる最大の回数を解答してください．
+      </p>
+
+    </div>
+    <!--ここまで-->
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 wasab1
+    </div>
+  </footer>
+  <script src="../problem-number.js"></script>
+  <script src="../details.js"></script>
+</body>
+</html>
