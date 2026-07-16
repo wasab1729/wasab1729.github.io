@@ -68,7 +68,7 @@
 </div>
   </div>
 
-    <!--ここから1問目-->
+    <!--ここから-->
     <div class="problem" data-difficulty="1">
       <h2 class="problem-title">
         (<a href="https://onlinemathcontest.com/contests/omcb006/tasks/8280">
@@ -86,91 +86,6 @@
       <p>
         すべての良い組 $(A,B)$ に対して，「$A$ の要素の総和」の総和を解答してください．
       </p>
-    </div>
-    <!--ここまで1問目-->
-    <!--ここから-->
-    <div class="problem" data-difficulty="2">
-      <h2 class="problem-title">
-        (<a href="https://onlinemathcontest.com/contests/omce024/tasks/17238">
-          OMCE024(A)
-        </a>)
-      </h2>
-
-      <p>
-        実数に対して定義され正の実数値をとる関数 $f$ は，
-        任意の実数 $x,y$ に対して，
-      </p>
-
-      $$
-      f\left(xf(y)-yf(x)\right)
-      =
-      \dfrac{f(x)}{f(y)}
-      $$
-
-      <p>
-        を満たします．さらに，$f$ が単射であり，
-        $f(3)=5$ が成り立つとき，$f$ は一意に定まるので，
-        $100f(10)$ 以下の最大の整数を解答してください．
-      </p>
-      <details class="smooth-details">
-        <summary>単射とは</summary>
-        <div class="details-content">
-        <p>
-          実数に対して定義され正の実数値をとる関数 $f$
-          が単射であるとは，任意の実数 $x_1,x_2$ に対して，
-          $x_1\neq x_2$ ならば
-          $f(x_1)\neq f(x_2)$ が成り立つことをいいます．
-        </p>
-        </div>
-      </details>
-    </div>
-    <!--ここまで-->
-    <!--ここから-->
-    <div class="problem" data-difficulty="4">
-      <h2 class="problem-title">
-        (<a href="https://onlinemathcontest.com/contests/omce024/tasks/17945">
-          OMCE024(D)
-        </a>)
-      </h2>
-
-      <p>
-        wasab1くんは以下の<b>Weakly Connected Score Sum</b>という問題を作りました．
-      </p>
-      <hr>
-
-      <h2>Weakly Connected Score Sum</h2>
-
-      <p>
-        正整数 $N$ および長さ $N+1$ の整数列 $C=(C_0,C_1,\cdots,C_{N})$ が与えられます．各項が $1$ 以上 $N$ 以下の整数からなる長さ $N$ の数列 $A=(A_1,A_2,\cdots,A_N)$ が<b>良い数列</b>であるとは，以下の条件を満たすことをいいます．
-      </p>
-      <ul>
-        <li>ラベル付き $N$ 頂点からなる有向グラフ $G$ であって，頂点 $i$ から頂点 $A_i$ へ有向辺が張られているものを考えると，$G$ は弱連結である．</li>
-      </ul>
-      <p>
-        ここで，良い数列の<b>スコア</b>を，上の $G$ における頂点 $i$ の入次数を $\deg(i)$ としたときの，以下の値で定めます．
-      </p>
-      $$\prod_{i=1}^{N}C_{\deg(i)}$$
-      <p>
-        すべての良い数列に対するスコアの総和を求めてください．
-      </p>
-      <hr>
-      <p>
-        $p=10^9+7$ は素数です．$N=p-1,C=(1!,2!,\cdots,(N+1)!)$ としたときの<b>Weakly Connected Score Sum</b>の答えを $p$ で割ったあまりを求めてください．
-      </p>
-            <details class="smooth-details">
-        <summary>用語の説明</summary>
-        <div class="details-content">
-        <p>
-          この問題では，それぞれ $1,2,\cdots,N$ とラベリングされた $N$ 個の頂点，および有向辺からなる有向グラフ（頂点および有向辺により定まる対象）を考えています．
-        </p>
-        <ul>
-          <li><b>有向辺</b>とは，頂点 $i$ から頂点 $j$ へと向きづけられた線のことをいいます．より厳密には，$2$ 頂点 $i,j$ からなる順序対 $(i,j)$ のことです．このときの頂点 $j$ を<b>終点</b>といいます．なお，$i$ と $j$ が相異なる必要はありません．</li>
-          <li>有向グラフが<b>弱連結</b>であるとは，各有向辺を無向辺（向きを無視した辺）に置き換えて得られる無向グラフが連結であることをいいます．
-            <br>なお，無向グラフが連結であるとは，任意の $2$ 頂点 $i,j$ に対し，無向辺に沿って $i$ から $j$ へ移動できることをいいます．</li>
-          <li>頂点 $i$ の<b>入次数</b>とは，有向辺であって $i$ が終点であるものの個数のことです．</li>
-        </ul>
-        </div>
-      </details>
     </div>
     <!--ここまで-->
   </main>
