@@ -723,12 +723,10 @@ footer {
     padding-left: 10px;
   }
 }
-/* 色付きの上部エリア */
-
 .top-area {
   color: #202628;
-  background: #eaf1f0;
-  border-bottom: 1px solid #d2ddda;
+  background: #eeeaf5;
+  border-bottom: 1px solid #d9d1e6;
 }
 
 .top-area .site-header {
