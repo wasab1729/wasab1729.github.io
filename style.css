@@ -779,3 +779,122 @@ footer {
     padding-bottom: 52px;
   }
 }
+/* Articlesの記事一覧表 */
+
+.article-table-wrap {
+  width: 100%;
+  margin-top: 40px;
+  overflow-x: auto;
+  border-top: 1px solid #d8d8d8;
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.article-table th,
+.article-table td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #e2e2e2;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.article-table th {
+  color: #666;
+  background: #f7f7f7;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.article-table th:nth-child(1),
+.article-table td:nth-child(1) {
+  width: 130px;
+}
+
+.article-table th:nth-child(2),
+.article-table td:nth-child(2) {
+  width: 160px;
+}
+
+.article-table td {
+  color: #555;
+  font-size: 0.92rem;
+}
+
+.article-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.article-table-title {
+  color: #222;
+  font-weight: 600;
+}
+
+.article-category {
+  display: inline-block;
+  padding: 2px 8px;
+  color: #555;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* Articlesのスマートフォン表示 */
+
+@media (max-width: 600px) {
+  .article-table-wrap {
+    border-top: 0;
+    overflow: visible;
+  }
+
+  .article-table,
+  .article-table tbody,
+  .article-table tr,
+  .article-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .article-table thead {
+    display: none;
+  }
+
+  .article-table tr {
+    padding: 16px 0;
+    border-top: 1px solid #ddd;
+  }
+
+  .article-table tr:last-child {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .article-table td {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 12px;
+    padding: 4px 0;
+    border-bottom: 0;
+  }
+
+  .article-table td::before {
+    content: attr(data-label);
+    color: #777;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .article-table th:nth-child(1),
+  .article-table td:nth-child(1),
+  .article-table th:nth-child(2),
+  .article-table td:nth-child(2) {
+    width: 100%;
+  }
+
+  .article-table tbody tr:hover {
+    background: transparent;
+  }
+}
