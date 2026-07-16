@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="最初の記事の説明"
+  >
+
+  <title>最初の記事 | wasab1</title>
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- 数式表示用 -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+</head>
+
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="site-title" href="../../index.html">
+        wasab1
+      </a>
+
+      <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Articles</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article-page">
+      <p class="article-back">
+        <a href="index.html">← Articles</a>
+      </p>
+
+      <header class="article-page-header">
+        <h1>最初の記事</h1>
+
+        <p class="article-page-meta">
+          <time datetime="2026-07-17">
+            2026-07-17
+          </time>
+          ・Problem Creation
+        </p>
+      </header>
+
+      <div class="article-body">
+        <p>
+          ここに記事の導入を書きます。
+        </p>
+
+        <h2>最初の見出し</h2>
+
+        <p>
+          ここに本文を書きます。
+          文中の数式は $x^2+y^2=z^2$ のように書けます。
+        </p>
+
+        <p>
+          独立した数式は次のように書きます。
+        </p>
+
+        $$
+        \sum_{k=1}^{n}k
+        =
+        \frac{n(n+1)}{2}
+        $$
+
+        <h2>二つ目の見出し</h2>
+
+        <p>
+          ここに続きを書きます。
+        </p>
+
+        <h3>小見出し</h3>
+
+        <p>
+          より細かく内容を分ける場合は
+          <code>&lt;h3&gt;</code> を使います。
+        </p>
+
+        <ul>
+          <li>箇条書き1</li>
+          <li>箇条書き2</li>
+          <li>箇条書き3</li>
+        </ul>
+
+        <h2>まとめ</h2>
+
+        <p>
+          ここに記事のまとめを書きます。
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 wasab1
+    </div>
+  </footer>
+</body>
+</html>
