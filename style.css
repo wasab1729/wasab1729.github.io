@@ -1,983 +1,194 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: #222;
-  background: #fff;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Noto Sans JP",
-    sans-serif;
-  line-height: 1.8;
-}
-
-a {
-  color: #2457a6;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  width: min(calc(100% - 40px), 760px);
-  margin: 0 auto;
-}
-
-/* ヘッダー */
-
-header {
-  border-bottom: 1px solid #ddd;
-}
-
-.header-inner {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.site-title {
-  color: #222;
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.site-title:hover {
-  text-decoration: none;
-}
-
-.header-inner nav {
-  display: flex;
-  gap: 20px;
-  font-size: 0.9rem;
-}
-
-.header-inner nav a {
-  color: #555;
-}
-
-.header-inner nav a:hover {
-  color: #2457a6;
-}
-
-.current-category {
-  color: #222 !important;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-/* ページ全体 */
-
-main {
-  padding: 72px 0;
-}
-
-.intro {
-  margin-bottom: 80px;
-}
-/* トップページの大きなヘッダー */
-
-.home-hero {
-  margin-top: 0;
-  padding: 24px 0 72px;
-}
-
-.home-hero-label {
-  margin: 0 0 12px;
-  color: #777;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.home-hero h1 {
-  margin-bottom: 16px;
-}
-
-.home-hero-description {
-  max-width: 620px;
-  margin: 0;
-  color: #555;
-  font-size: 1rem;
-}
-
-/* 外部サイトへのボタン */
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 8px 14px;
-  color: #333;
-  background: #fff;
-  border: 1px solid #d6d6d6;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.social-link:hover {
-  color: #222;
-  background: #f6f6f6;
-  border-color: #aaa;
-  text-decoration: none;
-}
-
-.social-link svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  fill: currentColor;
-}
-
-/* OnlineMathContestのアイコン */
-
-.omc-icon-frame {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.omc-icon {
-  display: block;
-  width: 28px;
-  height: 28px;
-  max-width: none;
-  object-fit: cover;
-}
-
-/* Xなどの文字アイコン */
-
-.social-text-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  font-size: 0.9rem;
-  font-weight: 800;
-}
-
-.youtube-link:hover {
-  color: #c00;
-}
-
-h1 {
-  margin: 0 0 20px;
-  font-size: clamp(2rem, 7vw, 3.2rem);
-  line-height: 1.25;
-  letter-spacing: -0.03em;
-}
-
-.intro p {
-  max-width: 620px;
-  margin: 0;
-  color: #555;
-}
-
-section {
-  margin-top: 64px;
-}
-
-h2 {
-  margin: 0 0 24px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #ddd;
-  font-size: 1.4rem;
-  line-height: 1.5;
-}
-
-h3 {
-  margin: 0 0 8px;
-  font-size: 1.05rem;
-}
-
-p {
-  margin: 0 0 16px;
-}
-
-ul,
-ol {
-  padding-left: 28px;
-}
-
-li {
-  overflow-wrap: anywhere;
-}
-
-.profile {
-  color: #444;
-}
-
-.page-header {
-  margin-bottom: 64px;
-}
-
-.page-introduction {
-  color: #666;
-}
-
-/* トップページのページ一覧 */
-
-.page-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.page-list li {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.page-list li:first-child {
-  border-top: 1px solid #e5e5e5;
-}
-
-.page-list a {
-  display: block;
-  padding: 20px 0;
-}
-
-.page-list a:hover {
-  text-decoration: none;
-}
-
-.page-title {
-  display: block;
-  color: #222;
-  font-weight: 600;
-}
-
-.page-description {
-  display: block;
-  margin-top: 4px;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* 以前の記事一覧を使用する場合 */
-
-.article-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.article-list li {
-  padding: 18px 0;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.article-list li:first-child {
-  border-top: 1px solid #e5e5e5;
-}
-
-.article-title {
-  display: block;
-  color: #222;
-  font-weight: 600;
-}
-
-.article-date {
-  display: block;
-  margin-top: 4px;
-  color: #777;
-  font-size: 0.85rem;
-}
-
-/* Problemsページ */
-
-.problem {
-  min-width: 0;
-}
-
-.problem + .problem {
-  margin-top: 64px;
-}
-
-.problem-title {
-  overflow-wrap: anywhere;
-}
-
-/*
-  Problem 1 などは problem-number.js が
-  通常の文字として挿入する。
-  CSSの ::before は使用しない。
-*/
-
-.problem-number {
-  color: #222;
-}
-/* 難易度 */
-
-
-.difficulty {
-  display: inline-flex;
-  gap: 1px;
-  margin-left: 0.7em;
-  vertical-align: 0.05em;
-  white-space: nowrap;
-  user-select: none;
-  font-size: 0.85em;
-  letter-spacing: 0;
-}
-
-.difficulty-star {
-  color: #999;
-}
-
-.difficulty-star.is-filled {
-  color: #222;
-}
-
-/* 求値問題・記述問題の切り替え */
-
-.problem-mode-switch {
-  display: inline-flex;
-  margin-top: 24px;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.problem-mode-switch a {
-  padding: 9px 18px;
-  color: #555;
-  background: #fff;
-  font-size: 0.9rem;
-}
-
-.problem-mode-switch a + a {
-  border-left: 1px solid #d0d0d0;
-}
-
-.problem-mode-switch a:hover {
-  color: #222;
-  background: #f5f5f5;
-  text-decoration: none;
-}
-
-.problem-mode-switch .current-mode {
-  color: #fff;
-  background: #222;
-  font-weight: 600;
-}
-
-.problem-mode-switch .current-mode:hover {
-  color: #fff;
-  background: #222;
-}
-
-/* 数式 */
-
-.math-example {
-  overflow-x: auto;
-  margin-top: 24px;
-  padding: 20px 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-
-mjx-container[display="true"] {
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-/* コード */
-
-pre {
-  overflow-x: auto;
-  max-width: 100%;
-  margin-top: 24px;
-  padding: 18px;
-  color: #eee;
-  background: #222;
-  border-radius: 4px;
-  line-height: 1.6;
-}
-
-code {
-  font-family:
-    "SFMono-Regular",
-    Consolas,
-    "Liberation Mono",
-    monospace;
-}
-
-/* 畳み込み */
-
-details {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  margin: 24px 0;
-  padding: 10px 14px;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
-  background: #fff;
-}
-
-details summary {
-  cursor: pointer;
-  font-weight: 600;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-details[open] summary {
-  margin-bottom: 8px;
-}
-
-details p {
-  margin: 0;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: normal;
-}
-
-details ul,
-details ol {
-  margin-bottom: 0;
-}
-
-.smooth-details .details-content {
-  min-width: 0;
-  padding-top: 8px;
-}
-
-.smooth-details .details-content p {
-  margin: 0;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-/* Problemsの分野選択 */
-
-.category-navigation {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 48px;
-}
-
-.category-navigation a {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  min-width: 0;
-  padding: 22px 18px;
-  color: #222;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-
-.category-navigation a:hover {
-  color: #2457a6;
-  text-decoration: none;
-}
-
-.category-letter {
-  flex-shrink: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.category-name {
-  min-width: 0;
-  color: #666;
-  font-size: 0.95rem;
-  overflow-wrap: anywhere;
-}
-
-/* フッター */
-
-footer {
-  padding: 28px 0;
-  color: #777;
-  border-top: 1px solid #ddd;
-  font-size: 0.85rem;
-}
-
-/* スマートフォン */
-
-@media (max-width: 600px) {
-  .header-inner {
-    padding: 14px 0;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 6px;
+(() => {
+  const path =
+    window.location.pathname.replace(/\/+$/, "");
+
+  /*
+    共通ヘッダー
+  */
+  const siteHeader =
+    document.getElementById("site-header");
+
+  if (siteHeader) {
+    siteHeader.innerHTML = `
+      <div class="container header-inner">
+        <a class="site-title" href="/">
+          wasab1
+        </a>
+
+        <nav>
+          <a
+            id="header-problems"
+            href="/pages/problems.html"
+          >
+            Problems
+          </a>
+
+          <a
+            id="header-articles"
+            href="/pages/articles/"
+          >
+            Articles
+          </a>
+        </nav>
+      </div>
+    `;
+
+    const problemsLink =
+      document.getElementById("header-problems");
+
+    const articlesLink =
+      document.getElementById("header-articles");
+
+    const isProblemsPage =
+      path === "/pages/problems.html" ||
+      path === "/pages/programming.html" ||
+      /^\/pages\/[ACGN]-(value|written)\.html$/.test(path);
+
+    const isArticlesPage =
+      path === "/pages/articles" ||
+      path.startsWith("/pages/articles/");
+
+    if (isProblemsPage && problemsLink) {
+      problemsLink.classList.add(
+        "current-category"
+      );
+
+      problemsLink.setAttribute(
+        "aria-current",
+        "page"
+      );
+    }
+
+    if (isArticlesPage && articlesLink) {
+      articlesLink.classList.add(
+        "current-category"
+      );
+
+      articlesLink.setAttribute(
+        "aria-current",
+        "page"
+      );
+    }
   }
 
-  .header-inner nav {
-    flex-wrap: wrap;
-    gap: 12px;
+  /*
+    現在の分野と問題形式を取得する
+  */
+  const categoryMatch = path.match(
+    /^\/pages\/([ACGN])-(value|written)\.html$/
+  );
+
+  const isProgrammingPage =
+    path === "/pages/programming.html";
+
+  if (!categoryMatch && !isProgrammingPage) {
+    return;
   }
 
-  main {
-    padding: 52px 0;
+  let currentCategory;
+  let currentMode;
+
+  if (isProgrammingPage) {
+    currentCategory = "P";
+    currentMode = "value";
+  } else {
+    currentCategory = categoryMatch[1];
+    currentMode = categoryMatch[2];
   }
 
-  .intro {
-    margin-bottom: 60px;
+  const problemsPage =
+    document.querySelector(".problems-page");
+
+  const pageHeader =
+    problemsPage?.querySelector(".page-header");
+
+  if (!problemsPage || !pageHeader) {
+    return;
   }
 
-  section {
-    margin-top: 52px;
+  /*
+    A / C / G / N / P のボタンを作る
+  */
+  const categoryNavigation =
+    document.createElement("nav");
+
+  categoryNavigation.className =
+    "problem-category-navigation";
+
+  categoryNavigation.setAttribute(
+    "aria-label",
+    "問題の分野"
+  );
+
+  const categories = [
+    {
+      code: "A",
+      name: "Algebra"
+    },
+    {
+      code: "C",
+      name: "Combinatorics"
+    },
+    {
+      code: "G",
+      name: "Geometry"
+    },
+    {
+      code: "N",
+      name: "Number Theory"
+    },
+    {
+      code: "P",
+      name: "Programming"
+    }
+  ];
+
+  categories.forEach(({ code, name }) => {
+    const link = document.createElement("a");
+
+    if (code === "P") {
+      link.href = "/pages/programming.html";
+    } else {
+      link.href =
+        `/pages/${code}-${currentMode}.html`;
+    }
+
+    link.textContent = code;
+    link.title = name;
+    link.setAttribute("aria-label", name);
+
+    if (code === currentCategory) {
+      link.classList.add(
+        "current-problem-category"
+      );
+
+      link.setAttribute(
+        "aria-current",
+        "page"
+      );
+    }
+
+    categoryNavigation.append(link);
+  });
+
+  /*
+    求値問題・記述問題のボタンの直前に置く
+  */
+  const modeSwitch =
+    pageHeader.querySelector(
+      ".problem-mode-switch"
+    );
+
+  if (modeSwitch) {
+    modeSwitch.before(categoryNavigation);
+  } else {
+    const pageTitle =
+      pageHeader.querySelector("h1");
+
+    if (pageTitle) {
+      pageTitle.after(categoryNavigation);
+    } else {
+      pageHeader.append(categoryNavigation);
+    }
   }
-
-  .page-header {
-    margin-bottom: 48px;
-  }
-
-  .problem + .problem {
-    margin-top: 52px;
-  }
-
-  .category-navigation {
-    grid-template-columns: 1fr;
-  }
-
-  details {
-    padding: 10px 12px;
-  }
-
-  .problem-mode-switch {
-    display: flex;
-    width: 100%;
-  }
-
-  .problem-mode-switch a {
-    flex: 1;
-    padding-right: 10px;
-    padding-left: 10px;
-    text-align: center;
-  }
-  .home-hero {
-    padding: 10px 0 52px;
-  }
-
-  .social-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .social-link {
-    min-width: 0;
-    justify-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
-/* トップページの大きなヘッダー */
-
-.home-hero {
-  margin-top: 0;
-  padding: 24px 0 72px;
-}
-
-.home-hero-label {
-  margin: 0 0 12px;
-  color: #777;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.home-hero h1 {
-  margin-bottom: 16px;
-}
-
-.home-hero-description {
-  max-width: 620px;
-  margin: 0;
-  color: #555;
-  font-size: 1rem;
-}
-
-/* 外部サイトへのボタン */
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 8px 14px;
-  color: #333;
-  background: #fff;
-  border: 1px solid #d6d6d6;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.social-link:hover {
-  color: #222;
-  background: #f6f6f6;
-  border-color: #aaa;
-  text-decoration: none;
-}
-
-/* YouTubeアイコン */
-
-.social-link svg {
-  display: block;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  fill: currentColor;
-}
-
-/* Xの文字アイコン */
-
-.social-text-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  font-size: 0.9rem;
-  font-weight: 800;
-}
-
-/* OnlineMathContestのアイコン */
-
-.omc-icon-frame {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-  overflow: hidden;
-  border-radius: 3px;
-}
-
-.omc-icon {
-  display: block;
-  width: 18px !important;
-  height: 18px !important;
-  max-width: 18px !important;
-  max-height: 18px !important;
-  object-fit: cover;
-}
-
-.youtube-link:hover {
-  color: #c00;
-}
-
-/* トップページのスマートフォン表示 */
-
-@media (max-width: 600px) {
-  .home-hero {
-    padding: 10px 0 52px;
-  }
-
-  .social-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .social-link {
-    min-width: 0;
-    justify-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
-.top-area {
-  color: #202628;
-  background-color: #b8ddff;
-  border-bottom: 1px solid #8fc4ee;
-}
-
-.top-area .site-header {
-  background: transparent;
-  border-bottom: 1px solid rgba(32, 38, 40, 0.12);
-}
-
-.top-area .site-title {
-  color: #202628;
-}
-
-.top-area .header-inner nav a {
-  color: #4d5c5a;
-}
-
-.top-area .header-inner nav a:hover {
-  color: #111;
-}
-
-.top-area .home-hero {
-  margin-top: 0;
-  padding-top: 72px;
-  padding-bottom: 76px;
-}
-
-.top-area .home-hero-label {
-  color: #60716e;
-}
-
-.top-area .home-hero-description {
-  color: #4d5c5a;
-}
-
-/* 色付きエリア内の外部リンク */
-
-.top-area .social-link {
-  color: #26312f;
-  background: rgba(255, 255, 255, 0.75);
-  border-color: rgba(38, 49, 47, 0.18);
-}
-
-.top-area .social-link:hover {
-  color: #111;
-  background: #fff;
-  border-color: rgba(38, 49, 47, 0.35);
-}
-@media (max-width: 600px) {
-  .top-area .home-hero {
-    padding-top: 44px;
-    padding-bottom: 52px;
-  }
-}
-/* Articlesの記事一覧表 */
-
-.article-table-wrap {
-  width: 100%;
-  margin-top: 40px;
-  overflow-x: auto;
-  border-top: 1px solid #d8d8d8;
-}
-
-.article-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.article-table th,
-.article-table td {
-  padding: 16px 14px;
-  border-bottom: 1px solid #e2e2e2;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.article-table th {
-  color: #666;
-  background: #f7f7f7;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.article-table th:nth-child(1),
-.article-table td:nth-child(1) {
-  width: 130px;
-}
-
-.article-table th:nth-child(2),
-.article-table td:nth-child(2) {
-  width: 160px;
-}
-
-.article-table td {
-  color: #555;
-  font-size: 0.92rem;
-}
-
-.article-table tbody tr:hover {
-  background: #fafafa;
-}
-
-.article-table-title {
-  color: #222;
-  font-weight: 600;
-}
-
-.article-category {
-  display: inline-block;
-  padding: 2px 8px;
-  color: #555;
-  background: #f1f1f1;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-
-/* Articlesのスマートフォン表示 */
-
-@media (max-width: 600px) {
-  .article-table-wrap {
-    border-top: 0;
-    overflow: visible;
-  }
-
-  .article-table,
-  .article-table tbody,
-  .article-table tr,
-  .article-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .article-table thead {
-    display: none;
-  }
-
-  .article-table tr {
-    padding: 16px 0;
-    border-top: 1px solid #ddd;
-  }
-
-  .article-table tr:last-child {
-    border-bottom: 1px solid #ddd;
-  }
-
-  .article-table td {
-    display: grid;
-    grid-template-columns: 90px minmax(0, 1fr);
-    gap: 12px;
-    padding: 4px 0;
-    border-bottom: 0;
-  }
-
-  .article-table td::before {
-    content: attr(data-label);
-    color: #777;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-
-  .article-table th:nth-child(1),
-  .article-table td:nth-child(1),
-  .article-table th:nth-child(2),
-  .article-table td:nth-child(2) {
-    width: 100%;
-  }
-
-  .article-table tbody tr:hover {
-    background: transparent;
-  }
-}
-/* 分野別問題ページの上部 */
-
-.problem-page-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 64px;
-  margin-bottom: 64px;
-}
-
-/*
-  既存の.page-headerには下余白があるので、
-  この配置の中では0にする
-*/
-
-.problem-page-heading .page-header {
-  min-width: 0;
-  margin-bottom: 0;
-}
-
-/* A / C / G / N の分野選択 */
-
-.problem-category-navigation {
-  display: grid;
-  grid-template-columns: repeat(2, 64px);
-  gap: 10px;
-}
-
-.problem-category-navigation a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 48px;
-  color: #555;
-  background: #fff;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.problem-category-navigation a:hover {
-  color: #222;
-  background: #f5f5f5;
-  border-color: #aaa;
-  text-decoration: none;
-}
-
-.problem-category-navigation
-.current-problem-category {
-  color: #fff;
-  background: #222;
-  border-color: #222;
-}
-
-.problem-category-navigation
-.current-problem-category:hover {
-  color: #fff;
-  background: #222;
-  border-color: #222;
-}
-
-/* スマートフォンではタイトルの下に横並びで置く */
-
-@media (max-width: 700px) {
-  .problem-page-heading {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-bottom: 48px;
-  }
-
-  .problem-category-navigation {
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr));
-    width: 100%;
-  }
-
-  .problem-category-navigation a {
-    width: auto;
-    height: 44px;
-  }
-}
+})();
