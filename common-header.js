@@ -33,9 +33,10 @@ if (siteHeader) {
   const articlesLink =
     document.getElementById("header-articles");
 
-  const isProblemsPage =
-    path === "/pages/problems.html" ||
-    /^\/pages\/[ACGN]-(value|written)\.html$/.test(path);
+const isProblemsPage =
+  path === "/pages/problems.html" ||
+  path === "/pages/programming.html" ||
+  /^\/pages\/[ACGN]-(value|written)\.html$/.test(path);
 
   const isArticlesPage =
     path.startsWith("/pages/articles/");
