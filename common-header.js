@@ -72,22 +72,29 @@
   }
 
   /*
-    A / C / G / N の分野選択
+    現在の分野と問題形式を取得する
   */
   const categoryMatch = path.match(
     /^\/pages\/([ACGN])-(value|written)\.html$/
   );
 
-  /*
-    分野別の問題ページでなければ
-    ここから先は何もしない
-  */
-  if (!categoryMatch) {
+  const isProgrammingPage =
+    path === "/pages/programming.html";
+
+  if (!categoryMatch && !isProgrammingPage) {
     return;
   }
 
-  const currentCategory = categoryMatch[1];
-  const currentMode = categoryMatch[2];
+  let currentCategory;
+  let currentMode;
+
+  if (isProgrammingPage) {
+    currentCategory = "P";
+    currentMode = "value";
+  } else {
+    currentCategory = categoryMatch[1];
+    currentMode = categoryMatch[2];
+  }
 
   const problemsPage =
     document.querySelector(".problems-page");
@@ -100,17 +107,8 @@
   }
 
   /*
-    h1や求値・記述ボタンを置く左側と、
-    分野選択を置く右側の枠を作る
+    A / C / G / N / P のボタンを作る
   */
-  const heading =
-    document.createElement("div");
-
-  heading.className = "problem-page-heading";
-
-  pageHeader.before(heading);
-  heading.append(pageHeader);
-
   const categoryNavigation =
     document.createElement("nav");
 
@@ -138,18 +136,22 @@
     {
       code: "N",
       name: "Number Theory"
+    },
+    {
+      code: "P",
+      name: "Programming"
     }
   ];
 
   categories.forEach(({ code, name }) => {
     const link = document.createElement("a");
 
-    /*
-      求値ページなら求値ページへ、
-      記述ページなら記述ページへ移動する
-    */
-    link.href =
-      `/pages/${code}-${currentMode}.html`;
+    if (code === "P") {
+      link.href = "/pages/programming.html";
+    } else {
+      link.href =
+        `/pages/${code}-${currentMode}.html`;
+    }
 
     link.textContent = code;
     link.title = name;
@@ -169,5 +171,24 @@
     categoryNavigation.append(link);
   });
 
-  heading.append(categoryNavigation);
+  /*
+    求値問題・記述問題のボタンの直前に置く
+  */
+  const modeSwitch =
+    pageHeader.querySelector(
+      ".problem-mode-switch"
+    );
+
+  if (modeSwitch) {
+    modeSwitch.before(categoryNavigation);
+  } else {
+    const pageTitle =
+      pageHeader.querySelector("h1");
+
+    if (pageTitle) {
+      pageTitle.after(categoryNavigation);
+    } else {
+      pageHeader.append(categoryNavigation);
+    }
+  }
 })();
