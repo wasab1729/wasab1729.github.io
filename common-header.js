@@ -19,7 +19,7 @@
 
       <nav>
         <a id="header-problems" href="${problemsUrl}">
-          Problemsおおお
+          Problems
         </a>
 
         <a id="header-articles" href="${articlesUrl}">
