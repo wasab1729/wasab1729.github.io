@@ -2,59 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta
-    name="description"
-    content="wasab1が作った幾何の問題"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Geometry Written Problems | wasab1</title>
-
-  <link rel="stylesheet" href="../style.css">
-  <script src="/common-header.js" defer></script>
-
-  <!-- 数式表示用 -->
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-        displayMath: [['$$', '$$']]
-      }
-    };
-  </script>
-
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  ></script>
+  <script src="../problem-page.js" defer></script>
 </head>
 
 <body>
-<header id="site-header"></header>
-
-<main class="container problems-page">
-  <div class="page-header">
-    <p>
-      <a href="problems.html">← Problems</a>
-    </p>
-
-    <h1>Geometry</h1>
-
-<div class="problem-mode-switch">
-  <a href="G-value.html">
-    求値問題
-  </a>
-
-  <a
-    href="G-written.html"
-    class="current-mode"
-    aria-current="page"
-  >
-    記述問題
-  </a>
-</div>
-  </div>
+  <div id="problem-content">
 
     <!--ここから-->
     <div class="problem" data-difficulty="5">
@@ -75,14 +32,7 @@
       <p>直線 $BF,CI$ の交点を $P$，直線 $BG,CH$ の交点を $Q$，直線 $CH,AE$ の交点を $R$，直線 $CI,AD$ の交点を $S$，直線 $AD,BG$ の交点を $T$，直線 $AE,BF$ の交点を $U$ とする．このとき，三角形 $APQ$ の外接円，三角形 $BRS$ の外接円，三角形 $CTU$ の外接円すべてが共通する $2$ 点と通ることを示せ．</p>
     </div>
     <!--ここまで-->
-  </main>
 
-  <footer>
-    <div class="container">
-      © 2026 wasab1
-    </div>
-  </footer>
-  <script src="../problem-number.js"></script>
-  <script src="../details.js"></script>
+  </div>
 </body>
 </html>
