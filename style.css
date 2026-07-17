@@ -898,3 +898,86 @@ footer {
     background: transparent;
   }
 }
+/* 分野別問題ページの上部 */
+
+.problem-page-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+/*
+  既存の.page-headerには下余白があるので、
+  この配置の中では0にする
+*/
+
+.problem-page-heading .page-header {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+/* A / C / G / N の分野選択 */
+
+.problem-category-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 64px);
+  gap: 10px;
+}
+
+.problem-category-navigation a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 48px;
+  color: #555;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.problem-category-navigation a:hover {
+  color: #222;
+  background: #f5f5f5;
+  border-color: #aaa;
+  text-decoration: none;
+}
+
+.problem-category-navigation
+.current-problem-category {
+  color: #fff;
+  background: #222;
+  border-color: #222;
+}
+
+.problem-category-navigation
+.current-problem-category:hover {
+  color: #fff;
+  background: #222;
+  border-color: #222;
+}
+
+/* スマートフォンではタイトルの下に横並びで置く */
+
+@media (max-width: 700px) {
+  .problem-page-heading {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+
+  .problem-category-navigation {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .problem-category-navigation a {
+    width: auto;
+    height: 44px;
+  }
+}
