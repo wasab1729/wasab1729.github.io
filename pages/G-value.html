@@ -2,59 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta
-    name="description"
-    content="wasab1が作った幾何の問題"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Geometry Problems | wasab1</title>
-
-  <link rel="stylesheet" href="../style.css">
-  <script src="/common-header.js" defer></script>
-
-  <!-- 数式表示用 -->
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-        displayMath: [['$$', '$$']]
-      }
-    };
-  </script>
-
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  ></script>
+  <script src="../problem-page.js" defer></script>
 </head>
 
 <body>
-<header id="site-header"></header>
-
-<main class="container problems-page">
-  <div class="page-header">
-    <p>
-      <a href="problems.html">← Problems</a>
-    </p>
-
-    <h1>Geometry</h1>
-
-    <div class="problem-mode-switch">
-      <a
-        href="G-value.html"
-        class="current-mode"
-        aria-current="page"
-      >
-        求値問題
-      </a>
-
-      <a href="G-written.html">
-        記述問題
-      </a>
-    </div>
-  </div>
+  <div id="problem-content">
 
     <!--ここから-->
     <div class="problem" data-difficulty="1">
@@ -321,14 +278,7 @@
       $ab+cd$ の値を解答してください．ただし，$|\triangle LMN|$ で三角形 $LMN$ の面積を表すものとします．
     </div>
     <!--ここまで-->
-  </main>
 
-  <footer>
-    <div class="container">
-      © 2026 wasab1
-    </div>
-  </footer>
-  <script src="../problem-number.js"></script>
-  <script src="../details.js"></script>
+  </div>
 </body>
 </html>
